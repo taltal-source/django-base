@@ -1,27 +1,46 @@
 services:
   db:
-    image: postgres
+    image: postgres:16
+    volumes:
+      - db_data_dev:/var/lib/postgresql/data
+      - ./containers/db:/docker-entrypoint-initdb.d
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: admin
-      POSTGRES_DB: postgres
+      TZ: Asia/Tokyo
+      POSTGRES_DB: $POSTGRES_DB
+      POSTGRES_USER: $POSTGRES_USER
+      POSTGRES_PASSWORD: $POSTGRES_PASSWORD
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 5s
+      retries: 3
+
+  pgadmin4:
+    image: dpage/pgadmin4
     ports:
-      - "5432"
-  
+      - 8080:80
+    volumes:
+      - pgadmin_data_dev:/var/lib/pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_CONFIG_SERVER_MODE: "False"
+      PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED: "False"
+    depends_on:
+      - db
+
   app:
     build:
       context: .
-      dockerfile: containers/app/Dockerfile
+      dockerfile: containers/app/Dockerfile.development
     command: >
       sh -c "
         sleep infinity
       "
-    volumes:
-      - .:/example-app
     env_file:
       - .env
     depends_on:
-      - db
+      db:
+        condition: service_healthy
 
   web:
     container_name: web
@@ -29,11 +48,13 @@ services:
       context: .
       dockerfile: containers/web/Dockerfile
     volumes:
-      - ./static:/static
+      - ./static:/static_dev
     ports:
       - "80:80"
     depends_on:
       - app
 
 volumes:
-  static:
+  static_dev:
+  db_data_dev:
+  pgadmin_data_dev:
