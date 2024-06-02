@@ -1,0 +1,68 @@
+@font-face {
+	font-family: "Noto Sans JP";
+	font-style: normal;
+	font-weight: 400;
+	src: url("../fonts/Noto_Sans_JP/NotoSansJP-Regular.ttf");
+}
+@font-face {
+	font-family: "Noto Sans JP";
+	font-style: normal;
+	font-weight: 500;
+	src: url("../fonts/Noto_Sans_JP/NotoSansJP-Medium.ttf");
+}
+@font-face {
+	font-family: "Noto Sans JP";
+	font-style: normal;
+	font-weight: 600;
+	src: url("../fonts/Noto_Sans_JP/NotoSansJP-SemiBold.ttf");
+}
+
+@font-face {
+	font-family: "Noto Sans JP";
+	font-style: normal;
+	font-weight: 700;
+	src: url("../fonts/Noto_Sans_JP/NotoSansJP-Bold.ttf");
+}
+
+@font-face {
+	font-family: "Noto Sans JP";
+	font-style: normal;
+	font-weight: 900;
+	src: url("../fonts/Noto_Sans_JP/NotoSansJP-Black.ttf");
+}
+
+@font-face {
+	font-family: "Noto Serif JP";
+	font-style: normal;
+	font-weight: 400;
+	src: url("../fonts/Noto_Serif_JP/NotoSerifJP-Regular.otf");
+}
+@font-face {
+	font-family: "Noto Serif JP";
+	font-style: normal;
+	font-weight: 500;
+	src: url("../fonts/Noto_Serif_JP/NotoSerifJP-Medium.otf");
+}
+@font-face {
+	font-family: "Noto Serif JP";
+	font-style: normal;
+	font-weight: 600;
+	src: url("../fonts/Noto_Serif_JPNotoSerifJP-SemiBold.otf");
+}
+
+@font-face {
+	font-family: "Noto Serif JP";
+	font-style: normal;
+	font-weight: 700;
+	src: url("../fonts/Noto_Serif_JP/NotoSerifJP-Bold.otf");
+}
+@font-face {
+	font-family: "Noto Serif JP";
+	font-style: normal;
+	font-weight: 900;
+	src: url("../fonts/Noto_Serif_JP/NotoSerifJP-Black.otf");
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
