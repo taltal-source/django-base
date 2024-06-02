@@ -12,7 +12,10 @@ services:
     build:
       context: .
       dockerfile: containers/app/Dockerfile
-    command: sh -c "/example-app/entrypoint.sh"
+    command: >
+      sh -c "
+        sleep infinity
+      "
     volumes:
       - .:/example-app
     env_file:

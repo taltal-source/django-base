@@ -1,0 +1,8 @@
+{
+    "name": "Bun NoCode tailwind Devcontainer",
+    "dockerComposeFile": [
+        "../docker-compose.dev.yml"
+    ],
+    "service": "app",
+    "workspaceFolder": "/example-app/"
+}
