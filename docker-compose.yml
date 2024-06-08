@@ -1,5 +1,6 @@
 services:
   db:
+    container_name: postgres16
     image: postgres:16
     volumes:
       - db_data:/var/lib/postgresql/data
@@ -13,8 +14,11 @@ services:
       test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
       interval: 5s
       retries: 3
+    networks:
+      - coffee_network 
 
-  app:
+  coffee:
+    container_name: coffeeapp
     build:
       context: .
       dockerfile: containers/app/Dockerfile
@@ -24,9 +28,11 @@ services:
     depends_on:
       db:
         condition: service_healthy
+    networks:
+      - coffee_network 
 
   web:
-    container_name: web
+    container_name: nginx
     build:
       context: .
       dockerfile: containers/web/Dockerfile
@@ -35,8 +41,14 @@ services:
     ports:
       - "80:80"
     depends_on:
-      - app
+      - coffee
+    networks:
+      - coffee_network 
 
 volumes:
   static:
   db_data:
+
+networks:
+  coffee_network:
+    driver: bridge

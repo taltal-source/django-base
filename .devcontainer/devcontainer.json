@@ -1,8 +1,26 @@
 {
-    "name": "Django Example App",
-    "dockerComposeFile": [
-        "../docker-compose.dev.yml"
-    ],
-    "service": "app",
-    "workspaceFolder": "/home/appuser/"
+  "name": "Django Example App",
+  "dockerComposeFile": [
+      "../docker-compose.dev.yml"
+  ],
+  "service": "coffee",
+  "workspaceFolder": "/home/appuser/",
+  "customizations": {
+  "vscode": {      
+      "extensions": [
+      "MS-CEINTL.vscode-language-pack-ja", // Visual Studio Codeの日本語言語パック
+      "bradlc.vscode-tailwindcss",	// Tailwind CSS IntelliSense
+      "ms-python.python", // Python 拡張機能
+      "ms-python.black-formatter", // Python fomatter
+      "ms-python.isort", // Python formatter
+      "ms-python.flake8", // Python linter
+      "oderwat.indent-rainbow", // インデントの色付け
+      "esbenp.prettier-vscode" // prettier
+      ],
+      "settings": {
+                "python.defaultInterpreterPath": "/usr/local/bin/python"
+      }
+    }
+  }
 }
+

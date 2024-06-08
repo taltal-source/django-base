@@ -13,6 +13,8 @@ services:
       test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
       interval: 5s
       retries: 3
+    networks:
+      - coffee_network 
 
   pgadmin4:
     image: dpage/pgadmin4
@@ -27,20 +29,22 @@ services:
       PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED: "False"
     depends_on:
       - db
+    networks:
+      - coffee_network 
 
-  app:
+  coffee:
     build:
       context: .
       dockerfile: containers/app/Dockerfile.development
-    command: >
-      sh -c "
-        sleep infinity
-      "
     env_file:
       - .env
+    command: >
+      sh -c "sleep infinity"
     depends_on:
       db:
         condition: service_healthy
+    networks:
+      - coffee_network 
 
   web:
     container_name: web
@@ -52,9 +56,15 @@ services:
     ports:
       - "80:80"
     depends_on:
-      - app
+      - coffee
+    networks:
+      - coffee_network 
 
 volumes:
   static_dev:
   db_data_dev:
   pgadmin_data_dev:
+
+networks:
+  coffee_network:
+    driver: bridge
