@@ -1,18 +1,16 @@
 {% load static %}
 <html lang="ja">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>サンプル | {% block title %}{% endblock %}</title>
-		<link href="{% static 'coffee/css/style.min.css' %}" rel="stylesheet" />
-	</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>サンプル | {% block title %}{% endblock %}</title>
+    <link href="{% static 'coffee/css/style.min.css' %}" rel="stylesheet" />
+  </head>
 
-	{% block additional %} {% endblock %}
+  {% block additional %} {% endblock %}
 
-	<body class="font-sans">
-        {% block content %} {% endblock %}
-        <section>
-            {% include "coffee/utils/footer.html" %}
-        </section>
-	</body>
+  <body class="font-sans">
+    {% block content %} {% endblock %}
+    <section>{% include "coffee/utils/footer.html" %}</section>
+  </body>
 </html>

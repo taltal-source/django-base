@@ -15,7 +15,7 @@ services:
       interval: 5s
       retries: 3
     networks:
-      - coffee_network 
+      - coffee_network
 
   coffee:
     container_name: coffeeapp
@@ -29,7 +29,7 @@ services:
       db:
         condition: service_healthy
     networks:
-      - coffee_network 
+      - coffee_network
 
   web:
     container_name: nginx
@@ -43,7 +43,7 @@ services:
     depends_on:
       - coffee
     networks:
-      - coffee_network 
+      - coffee_network
 
 volumes:
   static:
