@@ -2,6 +2,10 @@
   "name": "django-base",
   "version": "1.0.0",
   "main": "index.js",
+  "scripts": {
+		"watch": "npx tailwindcss -c ./tailwind.config.js -o ./static/coffee/css/style.min.css --minify --watch",
+		"build": "npx tailwindcss -c ./tailwind.config.js -o ./static/coffee/css/style.min.css --minify"
+	},
 	"devDependencies": {
   "postcss":"^8.4.23",
   "autoprefixer":"^10.4.19",

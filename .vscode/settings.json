@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "*.css": "tailwindcss"
+    },
+    "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit",
+        "source.fixAll.stylelint": "always",
+        }
+    },
+    "isort.args":["--profile", "black"],
+}
