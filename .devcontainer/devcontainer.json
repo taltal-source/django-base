@@ -16,6 +16,7 @@
       "ms-python.flake8", // Python linter
       "ms-python.mypy-type-checker", // Python type checker
       "oderwat.indent-rainbow", // インデントの色付け
+      "dbaeumer.vscode-eslint", // ESLint
       "esbenp.prettier-vscode" // prettier
       ],
       "settings": {
