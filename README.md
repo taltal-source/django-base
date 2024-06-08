@@ -26,6 +26,7 @@ docker-compose.ymlで定義。
    - 開発環境で起動は `python manage.py runserver`で8000番ポートにアクセス。
    - 本番環境と同じ環境で起動は `gunicorn config.wsgi:application --bind 0.0.0.0:8000`で80番ポートにアクセス
    - pgadminはlocalhost:8080で既に稼働中(ログイン情報はsettings.pyなどを参照。)
+5. `yarn watch` でtailwindcssのビルドを行う(常に実行したままにしておく。)
 
 ### 構成
 
