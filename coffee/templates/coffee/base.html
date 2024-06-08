@@ -10,7 +10,9 @@
   {% block additional %} {% endblock %}
 
   <body class="font-sans">
+    <!-- prettier-ignore -->
+    {% include "coffee/utils/header.html" %}
     {% block content %} {% endblock %}
-    <section>{% include "coffee/utils/footer.html" %}</section>
+    {% include "coffee/utils/footer.html" %}
   </body>
 </html>
