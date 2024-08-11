@@ -7,12 +7,14 @@
     <link href="{% static 'coffee/css/style.min.css' %}" rel="stylesheet" />
   </head>
 
-  {% block additional %} {% endblock %}
+	{% block additional %}
+	{% endblock %}
 
-  <body class="font-sans">
-    <!-- prettier-ignore -->
-    {% include "coffee/utils/header.html" %}
-    {% block content %} {% endblock %}
-    {% include "coffee/utils/footer.html" %}
-  </body>
+	<body class="font-sans">      
+        {% block content %} 
+		{% endblock %}
+        <section>
+			{% include "coffee/utils/footer.html" %}
+        </section>
+	</body>
 </html>

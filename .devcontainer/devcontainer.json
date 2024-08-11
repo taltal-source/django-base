@@ -7,15 +7,20 @@
     "vscode": {
       "extensions": [
         "MS-CEINTL.vscode-language-pack-ja", // Visual Studio Codeの日本語言語パック
+        "formulahendry.auto-close-tag", // HTML Auto Close Tag
         "bradlc.vscode-tailwindcss", // Tailwind CSS IntelliSense
         "ms-python.python", // Python 拡張機能
         "ms-python.black-formatter", // Python fomatter
         "ms-python.isort", // Python formatter
         "ms-python.flake8", // Python linter
         "ms-python.mypy-type-checker", // Python type checker
+        "batisteo.vscode-django", // Django Extentions
         "oderwat.indent-rainbow", // インデントの色付け
         "dbaeumer.vscode-eslint", // ESLint
-        "esbenp.prettier-vscode" // prettier
+        "esbenp.prettier-vscode", // prettier
+        "PKief.material-icon-theme", // iconパック
+        "thebarkman.vscode-djaneiro" // Djangoのショートカット
+
       ],
       "settings": {
         "python.defaultInterpreterPath": "/usr/local/bin/python"
